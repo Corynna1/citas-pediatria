@@ -1,32 +1,49 @@
-import Formulario from "./components/Formulario"
-import Header from "./components/Header"
-import ListadoPacientes from "./components/ListadoPacientes"
-
-
+import { useState, useEffect } from "react";
+import Formulario from "./components/Formulario";
+import Header from "./components/Header";
+import ListadoPacientes from "./components/ListadoPacientes";
 
 function App() {
- 
+  const [pacientes, setPacientes] = useState([]);
+  const [paciente, setPaciente]= useState({});
+
+  useEffect(()=>{
+    const obtenerLS = ()=>{
+      const pacientesLS=JSON.parse(localStorage.getItem('pacientes')) ?? [];
+      setPacientes(pacientesLS)
+    }
+  obtenerLS(); 
+
+  },[])//dependencia vacia significa que solo se ejecute 1 vez
+
+  useEffect(()=>{
+    localStorage.setItem('pacientes', JSON.stringify(pacientes))
+
+  }, [pacientes])
+
+
+  
+  const eliminarPaciente = id =>{
+    const pacientesActualizados = pacientes.filter (paciente => paciente.id !== id);
+    setPacientes(pacientesActualizados)
+  }
 
   return (
     <div className="container mx-auto mt-20">
-    <Header/>
+      <Header />
 
-    <div className="mt-20 md:flex">
-    <Formulario/>
-    <ListadoPacientes/>
+      <div className="mt-20 md:flex">
+        <Formulario pacientes={pacientes} setPacientes={setPacientes}
+        paciente={paciente} 
+        setPaciente={setPaciente}/>
+
+        <ListadoPacientes 
+        pacientes={pacientes}
+        setPaciente={setPaciente}
+        eliminarPaciente={eliminarPaciente} />
+      </div>
     </div>
-    </div>
-  )
+  );
 }
 
-export default App
-
-//container:
-//mx:margen de izquierda a a derecha
-//my:margen de arriba abajo
-//mt:margin-top
-//mb:margin-buttom
-//ml:margin-left
-//mr:margin-rigth
-//mx-auto:
-
+export default App;

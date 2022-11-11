@@ -1,18 +1,47 @@
-import React from 'react'
+
 import Pacientes from './Pacientes'
 
-function ListadoPacientes() {
+function ListadoPacientes({pacientes, setPaciente, eliminarPaciente}) {
+//iterar en paciente para que lo vaya mostrando en pantalla, se utiliza map
+
+//hacer un key unico
+
   return (
     <div className="md:w-1/2 lg:w-3/5 md:h-screen overflow-y-scroll">
 
-      <h2 className='font-black text-3xl text-center '>Listado de Pacientes</h2>
+      {pacientes && pacientes.length ? (
+        <>
+          <h2 className='font-black text-3xl text-center '>Listado de Pacientes</h2>
 
-      <p className='text-xl mt-5 mb-10 text-center'>
-      Administra tus {''}
-        <span className='text-indigo-600 font-bold '>Pacientes y Citas</span>
-      </p>
+          <p className='text-xl mt-5 mb-10 text-center'>
+          Administra tus {''}
+          <span className='text-indigo-600 font-bold '>Pacientes y Citas</span>
+          </p>
 
-      <Pacientes/>
+         {pacientes.map(paciente=>(
+
+          <Pacientes
+          key={paciente.id}
+          paciente={paciente}
+          setPaciente={setPaciente}
+          eliminarPaciente={eliminarPaciente}
+           />
+          ))}
+        </>
+        ) : (
+          <>
+          <h2 className='font-black text-3xl text-center '>No hay Pacientes</h2>
+
+          <p className='text-xl mt-5 mb-10 text-center'>
+          Comienza agregando pacientes
+          <span className='text-indigo-600 font-bold '> y apareceran en este lugar</span>
+          </p>
+          
+          
+          </>
+        )}
+
+    
       
       
 
