@@ -29,7 +29,7 @@ function App() {
   }
 
   return (
-    <div className="container mx-auto mt-20">
+    <div className="container mx-auto mt-20 bg-violet-300 p-3 rounded-lg">
       <Header />
 
       <div className="mt-20 md:flex">

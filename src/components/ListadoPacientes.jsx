@@ -15,7 +15,7 @@ function ListadoPacientes({pacientes, setPaciente, eliminarPaciente}) {
 
           <p className='text-xl mt-5 mb-10 text-center'>
           Administra tus {''}
-          <span className='text-indigo-600 font-bold '>Pacientes y Citas</span>
+          <span className='text-violet-600 font-bold '>Pacientes y Citas</span>
           </p>
 
          {pacientes.map(paciente=>(
@@ -34,7 +34,7 @@ function ListadoPacientes({pacientes, setPaciente, eliminarPaciente}) {
 
           <p className='text-xl mt-5 mb-10 text-center'>
           Comienza agregando pacientes
-          <span className='text-indigo-600 font-bold '> y apareceran en este lugar</span>
+          <span className='text-violet-600 font-bold '> y apareceran en este lugar</span>
           </p>
           
           
