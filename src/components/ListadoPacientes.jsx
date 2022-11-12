@@ -11,9 +11,9 @@ function ListadoPacientes({pacientes, setPaciente, eliminarPaciente}) {
 
       {pacientes && pacientes.length ? (
         <>
-          <h2 className='font-black text-3xl text-center '>Listado de Pacientes</h2>
+          <h2 className='font-black text-3xl text-center text-white '>Listado de Pacientes</h2>
 
-          <p className='text-xl mt-5 mb-10 text-center'>
+          <p className='text-xl mt-5 mb-10 text-center text-white'>
           Administra tus {''}
           <span className='text-violet-600 font-bold '>Pacientes y Citas</span>
           </p>
@@ -30,9 +30,9 @@ function ListadoPacientes({pacientes, setPaciente, eliminarPaciente}) {
         </>
         ) : (
           <>
-          <h2 className='font-black text-3xl text-center '>No hay Pacientes</h2>
+          <h2 className='font-black text-3xl text-center text-white '>No hay Pacientes</h2>
 
-          <p className='text-xl mt-5 mb-10 text-center'>
+          <p className='text-xl mt-5 mb-10 text-center text-white'>
           Comienza agregando pacientes
           <span className='text-violet-600 font-bold '> y apareceran en este lugar</span>
           </p>

@@ -109,7 +109,7 @@ function Formulario({pacientes, setPacientes, paciente, setPaciente}) {
             id="boy"
             type="text"
             placeholder="Nombre del Paciente"
-            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md text-black"
             value={nombre}
             onChange={(e)=>setNombre(e.target.value)}
           />
@@ -126,7 +126,7 @@ function Formulario({pacientes, setPacientes, paciente, setPaciente}) {
             id="tutor"
             type="text"
             placeholder="Nombre del Tutor"
-            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md text-black"
             value={tutor}
             onChange={(e)=>setTutor(e.target.value)}
           />
@@ -143,7 +143,7 @@ function Formulario({pacientes, setPacientes, paciente, setPaciente}) {
             id="email"
             type="email"
             placeholder="Email de Contacto"
-            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+            className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md text-black"
             value={email}
             onChange={(e)=>setEmail(e.target.value)}
           />
@@ -159,7 +159,7 @@ function Formulario({pacientes, setPacientes, paciente, setPaciente}) {
           <input
             id="alta"
             type="date"
-            className="border-2 w-full p-2 mt-2 rounded-md"
+            className="border-2 w-full p-2 mt-2 rounded-md text-black"
             value={fecha}
             onChange={(e)=>setFecha(e.target.value)}
           />
@@ -173,7 +173,7 @@ function Formulario({pacientes, setPacientes, paciente, setPaciente}) {
           </label>
           <textarea
           id="sintomas"
-          className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+          className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md text-black"
           placeholder="Describe los Síntomas"
           value={sintomas}
             onChange={(e)=>setSintomas(e.target.value)}
@@ -182,7 +182,7 @@ function Formulario({pacientes, setPacientes, paciente, setPaciente}) {
 
         <input
         type='submit'
-        className="bg-violet-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-all rounded-md"
+        className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-all rounded-md"
         value={paciente.id ? 'Editar Paciente' : 'Agregar Paciente'}/>
       </form>
     </div>
